@@ -26,6 +26,9 @@ All colors MUST be HSL.
     --light-blue: 195 100% 85%;
     --light-blue-foreground: 195 100% 15%;
 
+    --medical-blue: 207 100% 40%;
+    --medical-blue-foreground: 207 100% 95%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
@@ -76,6 +79,9 @@ All colors MUST be HSL.
 
     --light-blue: 195 100% 25%;
     --light-blue-foreground: 195 100% 85%;
+
+    --medical-blue: 207 100% 60%;
+    --medical-blue-foreground: 207 100% 10%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;

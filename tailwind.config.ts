@@ -48,6 +48,10 @@ export default {
 					DEFAULT: 'hsl(var(--light-blue))',
 					foreground: 'hsl(var(--light-blue-foreground))'
 				},
+				'medical-blue': {
+					DEFAULT: 'hsl(var(--medical-blue))',
+					foreground: 'hsl(var(--medical-blue-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'

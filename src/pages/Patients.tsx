@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Search, Plus, Eye, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -103,18 +104,34 @@ const Patients = () => {
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <div className="flex space-x-2">
-                      <Link to={`/patients/${patient.id}`}>
-                        <Button variant="outline" size="sm">
-                          <Eye className="h-4 w-4" />
-                        </Button>
-                      </Link>
-                      <Link to={`/patients/${patient.id}/history`}>
-                        <Button variant="outline" size="sm">
-                          <FileText className="h-4 w-4" />
-                        </Button>
-                      </Link>
-                    </div>
+                    <TooltipProvider>
+                      <div className="flex space-x-2">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Link to={`/patients/${patient.id}`}>
+                              <Button variant="outline" size="sm" className="bg-medical-blue text-medical-blue-foreground hover:bg-medical-blue/90">
+                                <Eye className="h-4 w-4" />
+                              </Button>
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>View Patient Details</p>
+                          </TooltipContent>
+                        </Tooltip>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Link to={`/patients/${patient.id}/history`}>
+                              <Button variant="outline" size="sm" className="bg-medical-blue text-medical-blue-foreground hover:bg-medical-blue/90">
+                                <FileText className="h-4 w-4" />
+                              </Button>
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>View Medical History</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                    </TooltipProvider>
                   </TableCell>
                 </TableRow>
               ))}
